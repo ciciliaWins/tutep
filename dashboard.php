@@ -21,16 +21,21 @@ $pendaftaran = $stmt->get_result();
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="gambar/logouptbahasa.png">
     <title>Dashboard - TUTEP UPT Bahasa UNTAN</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        .navbar-gradient {background: linear-gradient(135deg, #2C3E50 0%,  #8BC34A 100%)}
+        .bg-grey {background-color: #2C3E50 !important;}
+        .text-grey {color: #2C3E50 !important;}
+        .border-green { border-color: #8BC34A !important; }
+    </style>
 </head>
 <body class="bg-light">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-gradient">
         <div class="container">
             <a class="navbar-brand" href="dashboard.php">
                 <img src="gambar/logouptbahasa.png" alt="Logo UPT Bahasa" height="30" class="me-2">TUTEP UPT BAHASA UNTAN
@@ -59,7 +64,7 @@ $pendaftaran = $stmt->get_result();
         <!-- Welcome Section -->
         <div class="row mb-4">
             <div class="col-12">
-                <div class="card border-primary">
+                <div class="card border-green">
                     <div class="card-body">
                         <h4 class="card-title">Selamat Datang, <?php echo htmlspecialchars($mahasiswa['nama']); ?>!</h4>
                         <p class="card-text text-muted mb-0">
@@ -76,9 +81,9 @@ $pendaftaran = $stmt->get_result();
         <div class="row mb-4">
             <div class="col-md-4 mb-3">
                 <a href="daftar_tes.php" class="text-decoration-none">
-                    <div class="card border-primary h-100">
+                    <div class="card border-green h-100">
                         <div class="card-body text-center">
-                            <i class="bi bi-file-earmark-text text-primary" style="font-size: 3rem;"></i>
+                            <i class="bi bi-file-earmark-text text-grey" style="font-size: 3rem;"></i>
                             <h5 class="card-title mt-3">Daftar Tes</h5>
                             <p class="card-text text-muted">Daftar tes TUTEP, TOEFL ITP, dan lainnya</p>
                         </div>
@@ -87,9 +92,9 @@ $pendaftaran = $stmt->get_result();
             </div>
             <div class="col-md-4 mb-3">
                 <a href="daftar_pelatihan.php" class="text-decoration-none">
-                    <div class="card border-primary h-100">
+                    <div class="card border-green h-100">
                         <div class="card-body text-center">
-                            <i class="bi bi-book text-primary" style="font-size: 3rem;"></i>
+                            <i class="bi bi-book text-grey" style="font-size: 3rem;"></i>
                             <h5 class="card-title mt-3">Daftar Pelatihan</h5>
                             <p class="card-text text-muted">Ikuti pelatihan bahasa Inggris</p>
                         </div>
@@ -98,9 +103,9 @@ $pendaftaran = $stmt->get_result();
             </div>
             <div class="col-md-4 mb-3">
                 <a href="sertifikat.php" class="text-decoration-none">
-                    <div class="card border-primary h-100">
+                    <div class="card border-green h-100">
                         <div class="card-body text-center">
-                            <i class="bi bi-award text-primary" style="font-size: 3rem;"></i>
+                            <i class="bi bi-award text-grey" style="font-size: 3rem;"></i>
                             <h5 class="card-title mt-3">Sertifikat</h5>
                             <p class="card-text text-muted">Lihat dan cetak sertifikat Anda</p>
                         </div>
@@ -112,8 +117,8 @@ $pendaftaran = $stmt->get_result();
         <!-- Recent Registrations -->
         <div class="row">
             <div class="col-12">
-                <div class="card border-primary">
-                    <div class="card-header bg-primary text-white">
+                <div class="card border-green">
+                    <div class="card-header bg-grey text-white">
                         <h5 class="mb-0"><i class="bi bi-clock-history me-2"></i>Riwayat Pendaftaran</h5>
                     </div>
                     <div class="card-body">
