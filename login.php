@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nim = $_POST['nim'];
     $password = $_POST['password'];
     
+    // Query menggunakan nim sebagai primary key
     $stmt = $conn->prepare("SELECT * FROM mahasiswa WHERE nim = ?");
     $stmt->bind_param("s", $nim);
     $stmt->execute();
@@ -15,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result->num_rows > 0) {
         $mahasiswa = $result->fetch_assoc();
         if (password_verify($password, $mahasiswa['password'])) {
-            $_SESSION['mahasiswa_id'] = $mahasiswa['id'];
+            // Set session dengan nim sebagai identifier utama
             $_SESSION['nim'] = $mahasiswa['nim'];
             $_SESSION['nama'] = $mahasiswa['nama'];
             header('Location: dashboard.php');
@@ -60,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <label class="form-label">NIM</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
-                                    <input type="text" class="form-control" name="nim" required placeholder="Masukkan NIM Anda">
+                                    <input type="text" class="form-control" name="nim" required placeholder="Masukkan NIM Anda" autofocus>
                                 </div>
                             </div>
                             
