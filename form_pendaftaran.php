@@ -29,18 +29,18 @@ if ($jadwal_id) {
 
 // Process form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nama_lengkap = $_POST['nama_lengkap'];
+    $nama = $_POST['nama_lengkap'];
     $nim = $_POST['nim'];
     $email = $_POST['email'];
     $no_hp = $_POST['no_hp'];
     $jadwal_selected = $_POST['jadwal_id'] ?? $jadwal_id;
     
     // Calculate biaya based on jenjang
-    $biaya = ($mahasiswa['jenjang'] == 'S1' || $mahasiswa['jenjang'] == 'Diploma') ? $tes['biaya_s1'] : $tes['biaya_umum'];
+    $biaya = $tes['biaya'];
     
     // Insert pendaftaran
-    $stmt = $conn->prepare("INSERT INTO pendaftaran (mahasiswa_id, jenis_tes_id, jadwal_tes_id, nama_lengkap, nim, email, no_hp, biaya, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'menunggu_validasi')");
-    $stmt->bind_param("iiissssd", $_SESSION['mahasiswa_id'], $tes_id, $jadwal_selected, $nama_lengkap, $nim, $email, $no_hp, $biaya);
+    $stmt = $conn->prepare("INSERT INTO pendaftaran (nim, jenis_tes_id, jadwal_tes_id, nama, email, no_hp, biaya, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'menunggu_validasi')");
+    $stmt->bind_param("siisssd", $nim, $tes_id, $jadwal_selected, $nama, $email, $no_hp, $biaya);
     
     if ($stmt->execute()) {
         // Update slot if jadwal exists
