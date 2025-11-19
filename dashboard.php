@@ -30,7 +30,7 @@ $pendaftaran = $stmt->get_result();
         .navbar-gradient {background: linear-gradient(135deg, #2C3E50 0%,  #8BC34A 100%)}
         .bg-grey {background-color: #2C3E50 !important;}
         .text-grey {color: #2C3E50 !important;}
-        .border-green { border-color: #8BC34A !important; }
+        .border-grey { border-color: #2C3E50 !important; }
     </style>
 </head>
 <body class="bg-light">
@@ -64,7 +64,7 @@ $pendaftaran = $stmt->get_result();
         <!-- Welcome Section -->
         <div class="row mb-4">
             <div class="col-12">
-                <div class="card border-green">
+                <div class="card border-grey">
                     <div class="card-body">
                         <h4 class="card-title">Selamat Datang, <?php echo htmlspecialchars($mahasiswa['nama']); ?>!</h4>
                         <p class="card-text text-muted mb-0">
@@ -79,31 +79,20 @@ $pendaftaran = $stmt->get_result();
 
         <!-- Menu Cards -->
         <div class="row mb-4">
-            <div class="col-md-4 mb-3">
+            <div class="col-md-6 mb-3">
                 <a href="daftar_tes.php" class="text-decoration-none">
-                    <div class="card border-green h-100">
+                    <div class="card border-grey h-100">
                         <div class="card-body text-center">
                             <i class="bi bi-file-earmark-text text-grey" style="font-size: 3rem;"></i>
                             <h5 class="card-title mt-3">Daftar Tes</h5>
-                            <p class="card-text text-muted">Daftar tes TUTEP, TOEFL ITP, dan lainnya</p>
+                            <p class="card-text text-muted">Daftar tes TUTEP UNTAN</p>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 mb-3">
-                <a href="daftar_pelatihan.php" class="text-decoration-none">
-                    <div class="card border-green h-100">
-                        <div class="card-body text-center">
-                            <i class="bi bi-book text-grey" style="font-size: 3rem;"></i>
-                            <h5 class="card-title mt-3">Daftar Pelatihan</h5>
-                            <p class="card-text text-muted">Ikuti pelatihan bahasa Inggris</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-6 mb-3">
                 <a href="sertifikat.php" class="text-decoration-none">
-                    <div class="card border-green h-100">
+                    <div class="card border-grey h-100">
                         <div class="card-body text-center">
                             <i class="bi bi-award text-grey" style="font-size: 3rem;"></i>
                             <h5 class="card-title mt-3">Sertifikat</h5>
@@ -173,11 +162,6 @@ $pendaftaran = $stmt->get_result();
                                         <?php endwhile; ?>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="text-center mt-3">
-                                <a href="riwayat_pendaftaran.php" class="btn btn-primary">
-                                    Lihat Semua Riwayat <i class="bi bi-arrow-right"></i>
-                                </a>
                             </div>
                         <?php else: ?>
                             <div class="text-center py-5">
