@@ -19,7 +19,7 @@ $jenis_tes = $conn->query("SELECT * FROM jenis_tes ORDER BY id");
         .navbar-gradient {background: linear-gradient(135deg, #2C3E50 0%,  #8BC34A 100%)}
         .bg-grey {background-color: #2C3E50 !important;}
         .text-grey {color: #2C3E50 !important;}
-        .border-green { border-color: #8BC34A !important; }
+        .border-grey { border-color: #2C3E50 !important; }
         .btn-outline-blue {color:  #0D47A1 !important; border-color:  #0D47A1 !important;}
     </style>
 </head>

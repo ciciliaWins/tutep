@@ -299,13 +299,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <h4 class="text-success mb-0"><?php echo formatRupiah($tes['biaya']); ?></h4>
                         </div>
 
-                        <?php if ($tes['kode_tes'] == 'TUTEP_PRIVAT' && $mahasiswa['status'] == 'S1'): ?>
+                        <?php if (in_array($tes['kode_tes'], ['TUTEP_REG', 'TUTEP_REG_SERT', 'TUTEP_WND', 'TUTEP_WND_SERT', 'TUTEP_PRIVAT']) && $mahasiswa['status'] == 'S1'): ?>
                         <div class="alert alert-warning mb-0">
                             <small><i class="bi bi-exclamation-triangle me-2"></i>Skor minimal 425 untuk mendapatkan sertifikat</small>
                         </div>
                         <?php endif; ?>
                         
-                        <?php if (in_array($tes['kode_tes'], ['TUTEP_REG', 'TUTEP_REG_SERT'])): ?>
+                        <?php if (in_array($tes['kode_tes'], ['TUTEP_REG', 'TUTEP_REG_SERT', 'TUTEP_WND', 'TUTEP_WND_SERT', 'TUTEP_PRIVAT'])): ?>
                         <div class="alert alert-info mb-0">
                             <small>
                                 <i class="bi bi-info-circle me-2"></i>
