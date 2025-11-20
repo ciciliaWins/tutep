@@ -142,10 +142,14 @@ $jenis_tes = $conn->query("SELECT * FROM jenis_tes ORDER BY id");
                                         <p><?php echo !empty($tes['deskripsi']) ? nl2br(htmlspecialchars($tes['deskripsi'])) : 'Tidak ada deskripsi tersedia.'; ?></p>
                                     </div>
                                     
-                                    <?php if ($tes['kode_tes'] == 'TUTEP_REG' || $tes['kode_tes'] == 'TUTEP_REG_SERT'): ?>
+                                    <?php if ($tes['kode_tes'] == 'TUTEP_REG' || $tes['kode_tes'] == 'TUTEP_REG_SERT' || $tes['kode_tes'] == 'TUTEP_WND' || $tes['kode_tes'] == 'TUTEP_WND_SERT'): ?>
                                         <div class="alert alert-info">
                                             <i class="bi bi-info-circle me-2"></i>
                                             <strong>Catatan:</strong> Jadwal yang tidak tersedia di tabel ini sudah TUTUP/FULL SLOT dan/atau terpotong HARI LIBUR.
+                                        </div>
+                                        <div class="alert alert-warning">
+                                            <i class="bi bi-exclamation-triangle me-2"></i>
+                                            <strong>Penting:</strong> Untuk peserta mahasiswa S1 Untan, jika skor yang diperoleh dibawah 425 maka tidak bisa mendapatkan sertifikatnya.
                                         </div>
                                     <?php endif; ?>
                                     
@@ -153,13 +157,6 @@ $jenis_tes = $conn->query("SELECT * FROM jenis_tes ORDER BY id");
                                         <div class="alert alert-warning">
                                             <i class="bi bi-exclamation-triangle me-2"></i>
                                             <strong>Penting:</strong> Untuk peserta mahasiswa S1 Untan, jika skor yang diperoleh dibawah 425 maka tidak bisa mendapatkan sertifikatnya.
-                                        </div>
-                                    <?php endif; ?>
-                                    
-                                    <?php if ($tes['kode_tes'] == 'TOEFL_ITP'): ?>
-                                        <div class="alert alert-warning">
-                                            <i class="bi bi-exclamation-triangle me-2"></i>
-                                            <strong>Penting:</strong> Tes TOEFL® ITP di UPT Bahasa Untan akan dilaksanakan jika jumlah peserta yang telah mendaftar minimal 10 peserta.
                                         </div>
                                     <?php endif; ?>
                                 </div>
